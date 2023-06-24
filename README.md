@@ -1,6 +1,8 @@
 # 42Libft
 My project Libft from School 42
 
+![42Libft-cover](cover-libft-bonus.png)
+
 <table>
   <tr><td>Program name</td><td>libft.a</td></tr>
   <tr><td>Turn in files</td><td>Makefile, libft.h, ft_*.c</td></tr>
@@ -87,3 +89,7 @@ Implement the following functions in order to easily use your lists.
   <tr><td>ft_lstlast</td><td>ft_lstadd_back</td><td>ft_lstdelone</td></tr>
   <tr><td>ft_lstclear</td><td>ft_lstiter</td><td>ft_lstmap</td></tr>
 </table>
+
+
+
+<img align="right" src="libftm.png">
