@@ -57,7 +57,11 @@ SRCS		:= ft_atoi.c \
 				ft_strtrim.c \
 				ft_substr.c \
 				ft_tolower.c \
-				ft_toupper.c
+				ft_toupper.c \
+				ft_printf/ft_printf/ft_printf.c \
+				ft_printf/ft_printf/printf_putcharstr.c \
+				ft_printf/ft_printf/printf_puthex.c \
+				ft_printf/ft_printf/printf_putnrbs.c
 BONUS 		:= ft_lstnew_bonus.c \
 				ft_lstaddfront_bonus.c \
 				ft_lstsize_bonus.c \
@@ -68,13 +72,11 @@ BONUS 		:= ft_lstnew_bonus.c \
 				ft_lstiter_bonus.c \
 				ft_lstmap_bonus.c
 FLAGS		:= -Wall -Wextra -Werror
-LIBFTPRINTF	:= ./ft_printf/ft_printf
-LIBS		:= $(LIBFTPRINTF)/libftprintf.a
 OBJS		:= ${SRCS:.c=.o}
 BOBJS		:= ${BONUS:.c=.o}
 SOMETHING	:= 0
 
-all: libftprintf ${NAME}
+all: ${NAME}
 	@if [ $(SOMETHING) = 1 ]; then printf "$(MAGENTA)Done !\n$(RESET)"; fi
 	@if [ $(SOMETHING) = 0 ]; then printf "$(MAGENTA)Nothing to do !\n$(RESET)"; fi
 
@@ -83,16 +85,11 @@ bonus: compb
 	@if [ $(SOMETHING) = 0 ]; then printf "$(MAGENTA)Nothing to do !\n$(RESET)"; fi
 
 compb: ${OBJS} ${BOBJS}
-	@ar rc ${NAME} ${OBJS} ${BOBJS} ${LIBS} && printf "$(MAGENTA)LIBFT$(RESET)$(BOLD) Making bonuses...\n$(RESET)"
+	@ar rc ${NAME} ${OBJS} ${BOBJS} && printf "$(MAGENTA)LIBFT$(RESET)$(BOLD) Making bonuses...\n$(RESET)"
 	@ranlib ${NAME}
 
-libftprintf:
-	@printf "$(MAGENTA)Making FTPRINTF...\n$(RESET)" && $(MAKE) -C $(LIBFTPRINTF)
-	@printf "$(BOLD)Done making $(MAGENTA)FTPRINTF\n$(RESET)"
-	@printf "$(BOLD)--------------------\n$(RESET)"
-
 ${NAME}: ${OBJS}
-	@ar rc ${NAME} ${OBJS} ${LIBS} && printf "$(MAGENTA)LIBFT$(RESET)$(BOLD) Making lib...\n$(RESET)"
+	@ar rc ${NAME} ${OBJS} && printf "$(MAGENTA)LIBFT$(RESET)$(BOLD) Making lib...\n$(RESET)"
 	@ranlib ${NAME}
 
 .c.o:
@@ -100,11 +97,9 @@ ${NAME}: ${OBJS}
 	@$(eval SOMETHING = 1)
 
 clean:
-	@$(MAKE) -C $(LIBFTPRINTF) clean
 	@rm -f ${OBJS} && rm -f ${BOBJS} && printf "$(GREEN)Cleaning LIBFT OBJS...\n$(RESET)"
 
 fclean: clean
-	@$(MAKE) -C $(LIBFTPRINTF) fclean
 	@rm -f ${NAME} && printf "$(GREEN)Cleaning LIBFT $(NAME)...\n$(RESET)"
 
 re:	fclean all
