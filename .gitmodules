@@ -1,0 +1,3 @@
+[submodule "libft/ft_printf"]
+	path = libft/ft_printf
+	url = git@github.com:TheFoxan12/42Ft_printf.git
