@@ -3,6 +3,8 @@ My project Libft from School 42
 
 ![42Libft-cover](cover-libft-bonus.png)
 
+Note finale : 125/100
+
 <table>
   <tr><td>Program name</td><td>libft.a</td></tr>
   <tr><td>Turn in files</td><td>Makefile, libft.h, ft_*.c</td></tr>
