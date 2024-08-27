@@ -1,6 +1,6 @@
 # 42Libft
-My project Libft from School 42
-Finale grade : 125/100
+My project Libft from School 42 </br>
+Final grade : 125/100
 
 ![42Libft-cover](cover-libft-bonus.png)
 
