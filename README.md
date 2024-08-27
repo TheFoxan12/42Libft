@@ -1,9 +1,8 @@
 # 42Libft
 My project Libft from School 42
+Finale grade : 125/100
 
 ![42Libft-cover](cover-libft-bonus.png)
-
-Note finale : 125/100
 
 <table>
   <tr><td>Program name</td><td>libft.a</td></tr>
